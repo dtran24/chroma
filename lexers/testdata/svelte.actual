@@ -77,6 +77,12 @@ h1
 	<div transition:fade>{value}</div>
     {/key}
 
+    {#snippet figure(image)}
+	<figure>
+	    <img src={image.src} alt={image.caption} />
+	</figure>
+    {/snippet}
+
     <div class="blog-post">
 	    <h1>{post.title}</h1>
 	    {@html post.content}
