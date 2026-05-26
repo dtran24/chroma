@@ -12,6 +12,8 @@ nested_comment: # this is a comment right next to a key
   single_quote: 'single # quote string' # comment after single quote string
   double_quote: "double # quote string" # comment after double quote string
   key: no comment
+  colon_in_comment: value # comment: with a colon
+  colon_in_quoted_comment: "value" # comment: with a colon
 
 ################
 # SCALAR TYPES #
