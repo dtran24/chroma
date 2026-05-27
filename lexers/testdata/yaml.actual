@@ -14,6 +14,11 @@ nested_comment: # this is a comment right next to a key
   key: no comment
   colon_in_comment: value # comment: with a colon
   colon_in_quoted_comment: "value" # comment: with a colon
+  slash_comment: value // default
+  slash_comment_with_colon: value // default: value
+  slash_comment_after_quote: "value" // default: value
+  slash_url_not_comment: http://example.com/a:b
+  slash_network_path_not_comment: //server/path:80
 
 ################
 # SCALAR TYPES #
