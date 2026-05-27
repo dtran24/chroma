@@ -16,6 +16,8 @@ nested_comment: # this is a comment right next to a key
   colon_in_quoted_comment: "value" # comment: with a colon
   slash_comment: value // default
   slash_comment_with_colon: value // default: value
+  slash_comment_before_hash: value // note #123
+  hash_comment_before_slash: value # note // tail
   slash_comment_after_quote: "value" // default: value
   slash_url_not_comment: http://example.com/a:b
   slash_network_path_not_comment: //server/path:80
