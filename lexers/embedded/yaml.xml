@@ -86,7 +86,7 @@
       <rule pattern="&#34;[^&#34;\n].*&#34;: ">
         <token type="NameTag"/>
       </rule>
-      <rule pattern="(&#39;(?:[^&#39;]|&#39;&#39;)*&#39;)( +)(:)( )">
+      <rule pattern="(&#39;(?:[^&#39;]|&#39;&#39;)*&#39;)( +)(:)([ \n])">
         <bygroups>
           <token type="NameTag"/>
           <token type="TextWhitespace"/>
@@ -94,22 +94,7 @@
           <token type="TextWhitespace"/>
         </bygroups>
       </rule>
-      <rule pattern="(&#39;(?:[^&#39;]|&#39;&#39;)*&#39;)( +)(:)(\n)">
-        <bygroups>
-          <token type="NameTag"/>
-          <token type="TextWhitespace"/>
-          <token type="Punctuation"/>
-          <token type="TextWhitespace"/>
-        </bygroups>
-      </rule>
-      <rule pattern="(&#39;(?:[^&#39;]|&#39;&#39;)*&#39;)(:)( )">
-        <bygroups>
-          <token type="NameTag"/>
-          <token type="Punctuation"/>
-          <token type="TextWhitespace"/>
-        </bygroups>
-      </rule>
-      <rule pattern="(&#39;(?:[^&#39;]|&#39;&#39;)*&#39;)(:)(\n)">
+      <rule pattern="(&#39;(?:[^&#39;]|&#39;&#39;)*&#39;)(:)([ \n])">
         <bygroups>
           <token type="NameTag"/>
           <token type="Punctuation"/>
@@ -125,14 +110,7 @@
           <token type="TextWhitespace"/>
         </bygroups>
       </rule>
-      <rule pattern="((?:(?! #)[^&#34;\n{])*?)(:)( )">
-        <bygroups>
-          <token type="NameTag"/>
-          <token type="Punctuation"/>
-          <token type="TextWhitespace"/>
-        </bygroups>
-      </rule>
-      <rule pattern="((?:(?! #)[^&#34;\n{])*?)(:)(\n)">
+      <rule pattern="((?:(?! #)[^&#34;\n{])*?)(:)([ \n])">
         <bygroups>
           <token type="NameTag"/>
           <token type="Punctuation"/>
