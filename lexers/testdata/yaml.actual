@@ -11,6 +11,14 @@ nested_comment: # this is a comment right next to a key
   date_comment: 2010-11-12 # comment after date
   single_quote: 'single # quote string' # comment after single quote string
   double_quote: "double # quote string" # comment after double quote string
+  double_slash_comment: "Foo" // default
+  double_slash_comment_with_colon: "Bar" // default: Bar
+  double_slash_comment_with_quoted_colon: "Baz" // "default": Baz
+  plain_double_slash_comment_with_colon: string value // default: Bar
+  bool_double_slash_comment_with_colon: True // default: true
+  int_double_slash_comment_with_colon: 123 // default: 123
+  date_double_slash_comment_with_colon: 2010-11-12 // default: 2010-11-12
+  plain_hash_comment_with_colon: string value # default: Bar
   key: no comment
 
 ################
