@@ -254,3 +254,17 @@ set2:
   item3: null
 
 ...  # document end
+
+# issue #1271: // inline comments (incl. colons) must be Comment; // in scalars must stay Literal
+inline_slash_comment:
+  foo: "Foo" // default
+  bar: "Bar" // default: Bar
+  bare_scalar: some text // default: value
+  earliest_delim_slash_first: value // note #123
+  earliest_delim_hash_first: value # note // tail
+  hash_comment_with_colon: value # comment: with colon
+  list_item_slash_comment:
+    - item // c: d
+  url_value: http://example.com/a:b
+  network_path: //server/share
+  no_space_slash: value//notcomment
