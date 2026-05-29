@@ -26,3 +26,7 @@ ReactDOM.render(
   </p>,
   document.getElementById('root'),
 )
+
+const Translated = () => (
+  <div className="class1 class2 ">French sentence with an apostrophe : l'engrais est important{var === something ? "" : " text"}</div>
+)
