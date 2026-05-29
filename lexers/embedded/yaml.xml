@@ -23,6 +23,9 @@
       <rule pattern="#.*$">
         <token type="Comment"/>
       </rule>
+      <!-- Non-standard extension (issue #1271): treat " //" as an inline comment like "#".
+           Not part of the YAML spec, which only defines "#". Requires whitespace before "//"
+           and no non-space immediately after, so URLs (http://) and UNC paths (//host) stay literal. -->
       <rule pattern="(?&lt;=[^\S\n\r])//(?!\S).*$">
         <token type="Comment"/>
       </rule>
@@ -89,7 +92,7 @@
       <rule pattern="&#34;[^&#34;\n].*&#34;: ">
         <token type="NameTag"/>
       </rule>
-      <rule pattern="(-)( )((?:(?! #| //(?!\S))[^&#34;\n{])*?)(:)( )">
+      <rule pattern="(-)( )((?:(?! #)[^&#34;\n{])*?)(:)( )">
         <bygroups>
           <token type="Punctuation"/>
           <token type="TextWhitespace"/>
@@ -98,14 +101,14 @@
           <token type="TextWhitespace"/>
         </bygroups>
       </rule>
-      <rule pattern="((?:(?! #| //(?!\S))[^&#34;\n{])*?)(:)( )">
+      <rule pattern="((?:(?! #)[^&#34;\n{])*?)(:)( )">
         <bygroups>
           <token type="NameTag"/>
           <token type="Punctuation"/>
           <token type="TextWhitespace"/>
         </bygroups>
       </rule>
-      <rule pattern="((?:(?! #| //(?!\S))[^&#34;\n{])*?)(:)(\n)">
+      <rule pattern="((?:(?! #)[^&#34;\n{])*?)(:)(\n)">
         <bygroups>
           <token type="NameTag"/>
           <token type="Punctuation"/>

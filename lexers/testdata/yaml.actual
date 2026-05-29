@@ -268,3 +268,10 @@ inline_slash_comment:
   url_value: http://example.com/a:b
   network_path: //server/share
   no_space_slash: value//notcomment
+  # a plain scalar key may itself contain " //" (not a comment) up to the colon
+  key // with slash: value
+  # // inside quotes stays part of the string
+  quoted_slash: "text // not a comment"
+  single_quoted_slash: 'text // not a comment'
+  # no space after the colon: // is part of the value scalar
+  colon_slash:// not a comment
