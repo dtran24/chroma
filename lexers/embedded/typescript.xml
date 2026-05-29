@@ -27,7 +27,14 @@
       </rule>
     </state>
     <state name="jsx">
-      <rule pattern="(&lt;)(/?)(&gt;)">
+      <rule pattern="(&lt;)(&gt;)">
+        <bygroups>
+          <token type="Punctuation" />
+          <token type="Punctuation" />
+        </bygroups>
+        <push state="jsxcontent" />
+      </rule>
+      <rule pattern="(&lt;)(/)(&gt;)">
         <bygroups>
           <token type="Punctuation" />
           <token type="Punctuation" />
@@ -95,6 +102,13 @@
         </bygroups>
         <pop depth="1" />
       </rule>
+      <rule pattern="(\s*)(&gt;)(?=\s*\()">
+        <bygroups>
+          <token type="Text" />
+          <token type="Operator" />
+        </bygroups>
+        <pop depth="1" />
+      </rule>
       <rule pattern="(\s*)(&gt;)">
         <bygroups>
           <token type="Text" />
@@ -113,6 +127,13 @@
           <token type="Punctuation" />
         </bygroups>
         <pop depth="1" />
+      </rule>
+      <rule pattern="(&lt;)([\w\.]+)">
+        <bygroups>
+          <token type="Punctuation" />
+          <token type="NameTag" />
+        </bygroups>
+        <push state="tag" />
       </rule>
       <rule>
         <include state="jsx" />

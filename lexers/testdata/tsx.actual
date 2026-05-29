@@ -30,3 +30,10 @@ ReactDOM.render(
 const Translated = () => (
   <div className="class1 class2 ">French sentence with an apostrophe : l'engrais est important{var === something ? "" : " text"}</div>
 )
+
+const Nested = () => <div>hi<span>x</span><br/>bye</div>
+
+const Fragment = () => <>l'engrais{count}</>
+
+const generic = <T>(x: T) => x
+const genericComma = <T,>(a: T) => a
